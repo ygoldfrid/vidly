@@ -19,6 +19,7 @@ class App extends Component {
   state = {};
 
   componentDidMount() {
+    document.title = process.env.REACT_APP_NAME;
     const user = auth.getCurrentUser();
     this.setState({ user });
   }

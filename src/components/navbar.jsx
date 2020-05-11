@@ -1,14 +1,15 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 
 const NavBar = ({ user }) => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to="/">
-        Vidly
-      </Link>
-      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div className="navbar-nav">
+    <Navbar bg="light" expand="lg">
+      <Navbar.Brand href="/">Vidly</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
           <NavLink className="nav-item nav-link" to="/movies">
             Movies
           </NavLink>
@@ -38,9 +39,9 @@ const NavBar = ({ user }) => {
               </NavLink>
             </React.Fragment>
           )}
-        </div>
-      </div>
-    </nav>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
 
